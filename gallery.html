@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style.css">-->
+
+    <title>60 Answers</title>
+
+</head>
+
+<style>
+    *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container{
+padding-top: 100px;
+padding-bottom: 100px;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+header > p{
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.image-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 100%;
+  margin: 24px auto;
+  padding: 0 50px; 
+  margin-bottom: 50px;
+}
+
+.image-gallery > img{
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 50px;
+  cursor: pointer;
+transition: all 0.25s ease-in-out;
+}
+
+.image-gallery > img:hover{
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#lightbox {
+    position: fixed;
+    inset: 0; 
+    background: rgba(255, 255, 255, 0.8); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; 
+}
+
+#lightbox-index {
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 100;
+    color: #333;
+    padding: 6px 10px;
+}
+
+
+#lightbox.show {
+    display: flex;
+}
+
+#lightbox-img {
+    max-width: 75vw;
+    max-height: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+footer{
+    color:rgb(193, 193, 193);
+    padding:0 50px;
+    text-align: right;
+    padding-bottom: 100px;
+}
+.to-be-continued{
+    position: relative;
+    margin-top: -30px;  
+    margin-bottom: 70px; 
+    overflow: hidden; 
+    text-align: right;
+}
+
+.to-be-continued span{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 100;
+    font-style: italic;
+    color: rgb(160, 160, 160);
+    white-space: nowrap;
+    animation: tbc-marquee 10s linear infinite; 
+}
+
+@keyframes tbc-marquee {
+    0% {
+        transform: translateX(100%);  
+    }
+    100% {
+        transform: translateX(-1000%);  
+    }
+}
+
+
+
+</style>
+
+<body>
+    <div class="container">
+        <header>
+            <p>60 Answers</p>
+        </header>
+
+        <div class="image-gallery">
+            <img src="png/1.png" alt="1">
+            <img src="png/2.png" alt="2">
+            <img src="png/3.png" alt="3">
+            <img src="png/4.png" alt="4">
+            <img src="png/5.png" alt="5">
+            <img src="png/6.png" alt="6">
+            <img src="png/7.png" alt="7">
+            <img src="png/8.png" alt="8">
+            <img src="png/9.png" alt="9">
+            <img src="png/10.png" alt="10">
+            <img src="png/11.png" alt="11">
+            <img src="png/12.png" alt="12">
+            <img src="png/13.png" alt="13">
+            <img src="png/14.png" alt="14">
+            <img src="png/15.png" alt="15">
+            <img src="png/16.png" alt="16">
+            <img src="png/17.png" alt="17">
+            <img src="png/18.png" alt="18">
+            <img src="png/19.png" alt="19">
+            <img src="png/20.png" alt="20">
+            <img src="png/25.png" alt="25">
+            <img src="png/26.png" alt="26">
+            <img src="png/27.png" alt="27">
+            <img src="png/28.png" alt="28">
+            <img src="png/29.png" alt="29">
+            <img src="png/30.png" alt="30">
+            <img src="png/31.png" alt="31">
+            <img src="png/32.png" alt="32">
+            <img src="png/33.png" alt="33">
+            <img src="png/34.png" alt="34">
+            <img src="png/35.png" alt="35">
+            <img src="png/36.png" alt="36">
+            <img src="png/37.png" alt="37">
+            <img src="png/38.png" alt="38">
+            <img src="png/39.png" alt="39">
+            <img src="png/40.png" alt="40">
+        </div>
+        <div class="to-be-continued">
+            <span>(to be continued)</span>
+        </div>        
+        <header>
+            <p>Answers from yaks and horses in Shangri-La</p>
+        </header>
+        <div class="image-gallery">
+            <img src="png/21.png" alt="21">
+            <img src="png/22.png" alt="22">
+            <img src="png/23.png" alt="23">
+            <img src="png/24.png" alt="24">
+        </div>
+    </div>
+     <!-- Lightbox -->
+     <div id="lightbox">
+        <div class="lightbox-inner">
+            <img id="lightbox-img" src="" alt="">
+            <span id="lightbox-index"></span>
+        </div>
+    </div>
+
+    <footer> <small>&copy; <time id="year">2025</time> 60 Answers</small> </footer>
+</body>
+
+<script>
+    const galleryImages = document.querySelectorAll('.image-gallery img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxIndex = document.getElementById('lightbox-index');
+    
+    const totalImages = galleryImages.length;
+    
+    let currentIndex = 0;    
+    let hoverZone = 'outside'; 
+    
+    function showImage() {
+        const img = galleryImages[currentIndex];
+        if (!img) return;
+    
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+    
+        lightboxIndex.textContent = `${currentIndex + 1} / ${totalImages}`;
+        lightbox.classList.add('show');
+    }
+    
+    function showNext() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage();
+    }
+    
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage();
+    }
+    
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            showImage();
+        });
+    });
+    
+    lightbox.addEventListener('mousemove', (e) => {
+        const rect = lightboxImg.getBoundingClientRect();
+    
+        const withinImage =
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom;
+    
+        if (!withinImage) {
+            hoverZone = 'outside';
+            lightbox.style.cursor = 'pointer'; 
+            return;
+        }
+    
+        const middleX = rect.left + rect.width / 2;
+    
+        if (e.clientX < middleX) {
+            hoverZone = 'left';
+            lightbox.style.cursor = 'w-resize'; 
+        } else {
+            hoverZone = 'right';
+            lightbox.style.cursor = 'e-resize'; 
+        }
+    });
+    
+    lightbox.addEventListener('click', () => {
+        if (hoverZone === 'left') {
+            showPrev();
+        } else if (hoverZone === 'right') {
+            showNext();
+        } else {
+            lightbox.classList.remove('show');
+        }
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            lightbox.classList.remove('show');
+        }
+    });
+    </script>
+    
+
+</html>
