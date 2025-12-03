@@ -40,12 +40,76 @@ padding-bottom: 100px;
 
 header{
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 75px;
 }
 
 header > p{
     font-size: 24px;
     font-weight: 100;
+}
+
+details.info {
+  max-width: 900px;
+  margin: 18px auto 0;
+  padding: 0 50px; 
+}
+
+details.info summary {
+  list-style: none;         
+  cursor: pointer;
+  user-select: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 25px;
+  color:inherit;
+  opacity:0.25;
+  padding: 8px 10px;
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+details.info summary:hover {
+    transform: rotate(180deg);
+    opacity:0.75;
+}
+
+details.info summary::-webkit-details-marker {
+  display: none; 
+}
+
+details.info .chev {
+  display: inline-block;
+  text-align: center;
+}
+
+details.info[open] .chev::before {
+  content: "▼";
+}
+details.info:not([open]) .chev::before {
+  content: "▲";
+}
+
+details.info .info-body {
+  margin-top: 12px;
+  text-align: center;
+}
+
+details.info .info-body p {
+  margin: 0 auto;
+  max-width: 70ch;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 1.7;
+  color: rgb(80, 80, 80);
+  margin-bottom: 1.5rem;
+}
+
+details.info .info-body p.special {
+    font-weight: 300;
 }
 
 .image-gallery{
@@ -149,7 +213,23 @@ footer{
     <div class="container">
         <header>
             <p>60 Answers</p>
-        </header>
+          
+            <details class="info" id="about-60-answers">
+              <summary>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+          
+              <div class="info-body">
+                <p>
+                    Have you ever had a question about life that you desperately wanted answered but didn’t even know who to ask?
+                </p>
+                <p class="special">Welcome to The Book of Answers, by Carol Bolt.</p>
+                <p>
+                    This website turns 60 answers from the book into visual pieces—mostly in black and white—made with Adobe Photoshop and Illustrator. Each design experiments with form, composition, and typography to explore how an answer can be can be seen, felt, and experienced.
+                </p>
+              </div>
+            </details>
+          </header>
 
         <div class="image-gallery">
             <img src="png/1.png" alt="1">
@@ -192,9 +272,22 @@ footer{
         <div class="to-be-continued">
             <span>(to be continued)</span>
         </div>        
+
         <header>
             <p>Answers from yaks and horses in Shangri-La</p>
-        </header>
+          
+            <details class="info" id="about-60-answers">
+              <summary>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+          
+              <div class="info-body">
+                <p>
+                    If you ever want advice from four-legged philosophers of the high valleys of Yunnan...
+                </p>
+              </div>
+            </details>
+          </header>
         <div class="image-gallery">
             <img src="png/21.png" alt="21">
             <img src="png/22.png" alt="22">
